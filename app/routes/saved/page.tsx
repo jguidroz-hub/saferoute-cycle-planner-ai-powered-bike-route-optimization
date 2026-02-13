@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface RoutesSavedItem
+interface RoutesSavedItem {
   id: string;
   title?: string;
   status?: string;
@@ -10,7 +10,7 @@ interface RoutesSavedItem
   [key: string]: any;
 }
 
-export default function RoutesSavedPage
+export default function RoutesSavedPage() {
   const [items, setItems] = useState<RoutesSavedItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);

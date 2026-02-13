@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface RoutesGenerateItem
+interface RoutesGenerateItem {
   id: string;
   title?: string;
   status?: string;
@@ -10,7 +10,7 @@ interface RoutesGenerateItem
   [key: string]: any;
 }
 
-export default function RoutesGeneratePage
+export default function RoutesGeneratePage() {
   const [items, setItems] = useState<RoutesGenerateItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
