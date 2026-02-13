@@ -14,9 +14,9 @@ export async function GET(request: Request) {
   const ip = request.headers.get('x-forwarded-for') || 'unknown';
   // Rate limit: 15 per 1min
 
-  const items = await db.select().from(RoutesReview)
-    .where(eq(RoutesReview.userId, session.user.id))
-    .orderBy(desc(RoutesReview.createdAt))
+  const items = await db.select().from(routeReviews)
+    .where(eq(routeReviews.userId, session.user.id))
+    .orderBy(desc(routeReviews.createdAt))
     .limit(100);
 
   return NextResponse.json({ items, count: items.length });
@@ -29,7 +29,7 @@ export async function POST(request: Request) {
   const body = await request.json();
   const id = randomUUID();
 
-  const [item] = await db.insert(RoutesReview).values({
+  const [item] = await db.insert(routeReviews).values({
     id,
     userId: session.user.id,
     ...body,
