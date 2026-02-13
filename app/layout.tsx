@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'SafeRoute Cycle Planner - AI-powered bike route optimization',
-  description: 'Value Proposition: Helps cyclists plan routes that prioritize safety, scenic beauty, and enjoyment over directness, leveraging AI to analyze road conditions, traffic data, and user preferences, reducing stress and improving ride quality for a better cycling experience.',
+  description: 'Value Proposition: Helps cyclists plan routes that prioritize safety, scenic beauty, and enjoyment o',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
