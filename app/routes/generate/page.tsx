@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface Routes/generateItem {
+interface RoutesGenerateItem
   id: string;
   title?: string;
   status?: string;
@@ -10,8 +10,8 @@ interface Routes/generateItem {
   [key: string]: any;
 }
 
-export default function Routes/generatePage() {
-  const [items, setItems] = useState<Routes/generateItem[]>([]);
+export default function RoutesGeneratePage
+  const [items, setItems] = useState<RoutesGenerateItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -39,7 +39,7 @@ export default function Routes/generatePage() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/api/routes/generate/${id}`, { method: 'DELETE' });
+    await fetch(`/ApiRoutesGenerate/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
