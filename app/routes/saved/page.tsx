@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-interface RoutesSavedItem {
+interface routesdItem {
   id: string;
   title?: string;
   status?: string;
@@ -10,8 +10,8 @@ interface RoutesSavedItem {
   [key: string]: any;
 }
 
-export default function RoutesSavedPage() {
-  const [items, setItems] = useState<RoutesSavedItem[]>([]);
+export default function routesdPage() {
+  const [items, setItems] = useState<routesdItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [showCreate, setShowCreate] = useState(false);
   const [newTitle, setNewTitle] = useState('');
@@ -39,7 +39,7 @@ export default function RoutesSavedPage() {
   };
 
   const handleDelete = async (id: string) => {
-    await fetch(`/ApiRoutesSaved/${id}`, { method: 'DELETE' });
+    await fetch(`/Apiroutesd/${id}`, { method: 'DELETE' });
     setItems(prev => prev.filter(i => i.id !== id));
   };
 
